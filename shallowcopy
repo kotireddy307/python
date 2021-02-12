@@ -1,0 +1,38 @@
+SHALLOW COPY
+Shallowcopy creates the new object which stores reference of the original elements, if it is not a inner list whenever we make any modifications in duplicate object those modifications wont applicable for original object, but it cant create nested object when we make any changes in inner list those modifications will be applicable for both lists.
+Ex :
+	l1=[1,[2,3,4],5]
+l2=l1[:]
+l1.append('koti')
+print(l1)………> [1, [2, 3, 4], 5, 'koti']
+print(l2)………> [1, [2, 3, 4], 5]
+Ex :
+	l1=[1,[2,3,4],5]
+l2=list(l1)
+l1[1][0]= 'koti'
+print(l1)………> [1, ['koti', 3, 4], 5]
+print(l2)………> [1, ['koti', 3, 4], 5]
+Ex :
+	import copy
+l1=[1,[2,3,4],5]
+l2=copy.copy(l1)
+l1[1][0]= 'koti'
+print(l1)………> [1, ['koti', 3, 4], 5]
+print(l2)………> [1, ['koti', 3, 4], 5]
+DEEPCOPY
+	Deepcopy create a new object which is also stores reference of the original elements,  and its create inner list object also whenever we make any changes in original object those modificatios wont effect in duplicate object.
+Ex :
+	import copy
+l1=[1,[2,3,4],5]
+l2=copy.deepcopy(l1)
+l1[1][0]= 'koti'
+print(l1)………> [1, ['koti', 3, 4], 5]
+print(l2)………> [1, [2, 3, 4], 5]
+
+
+	
+
+
+	
+
+
